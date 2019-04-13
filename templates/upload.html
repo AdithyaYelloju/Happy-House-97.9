@@ -1,0 +1,47 @@
+<html>
+	<head>
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/style.css">
+	
+	<style>
+	input[type="submit"]{
+    	color: #fff;
+    	background-color: #00AFD1;
+   	 border-radius: 10px;
+   	 width: 10%;
+  	height: 38px;
+  	 font-size: 20px;
+	 line-height: 1.45;
+	}
+	
+	.upload-btn-wrapper input[type=file] {
+	  font-size: 100px;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  opacity: 0;
+	}
+</style>
+	<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+	</head>
+
+   	<body>
+	   	<a href="/"> <img src="/static/home.png" width="200" height="200"> </a>
+	   	<h1 style="font-size:60px; color:blue;text-shadow: 2px 2px red;"> Select image</h1>
+	   	
+	      <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+		 <input type = "file" name = "file" onchange="loadFile(event)" />
+		 <input type = "submit" class="btn btn-2"/>
+	      </form>
+	      <img id="output" src="/static/smiley.jpg" width="20%" height="300"> 
+
+	  
+	      </center>
+	</body>
+</html>

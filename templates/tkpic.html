@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="/static/style.css">
+		<style>
+			.booth {
+				width:400px;
+				background-color:#ccc;
+				border:10px solid #ddd;
+				margin:0 auto;
+				
+			}
+			.booth-capture-button {
+			display: block;
+			margin:10px 0;
+			padding:10px 20px;
+			background-color:cornflowerblue;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			}
+			#canvas{
+			display: none;
+			}
+			#tq{
+			display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="/"> <img id ='home'  src="/static/home.png" width="200" height="200"> </a>
+		<div class="booth">
+			<video id="video" width="400" height="300"></video>
+			<a href="#" id="capture" class="booth-capture-button">Take photo</a>
+		</div>
+		<div class="booth">
+			<canvas id="canvas" width="400" height="300"></canvas>
+			<img id="photo" src="/static/smiles.jpg" width="400" height="300"> 
+			<a href="#" id="myButton" class="myButton booth-capture-button">Upload</a>
+		</div>
+		
+		
+		<h1 id='result' style="font-size:60px; color:blue;text-shadow: 2px 2px red;">Smile Detector</h1>
+
+		<center><img id='tq' src="/static/tq.png" width="400" height="200" >		</center>
+
+		
+	
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="{{ url_for('static', filename='photo.js') }}"></script>
+		
+			    <script type="text/javascript">
+	   
+	   		$(".myButton").click(function(){
+	   			var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	   			var canvasObj = document.getElementById("canvas");
+	   			var img = canvasObj.toDataURL();
+	   			$.ajax({
+	   				type: "POST",
+	   				url: $SCRIPT_ROOT + "/predict",
+	   				data: img,
+	   				success: function(data){
+	   					//$('#result').text(' Predicted Output: '+data);
+	   					img = document.getElementById('home');
+	   					if (data < 0.5) {
+						  img.setAttribute('src', '/static/sad.jpeg');
+						}else{
+							img.setAttribute('src', '/static/smiley.jpg');
+						}
+						document.getElementById('tq').style.display = "block";
+						document.getElementById('result').style.display = "none";
+	   				}
+	   			});
+	   		});
+	   
+	   </script>
+		
+		
+	</body>
+	
+</html>
+
