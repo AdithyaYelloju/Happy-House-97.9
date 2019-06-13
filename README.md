@@ -1,4 +1,4 @@
-# Happy-House-97.9-accuracy
+# Smile Detection
 Happy House data set is images from the front door camera to check if the person is happy or not.
 The data set is labelled. Archieved 97.7% accuracy and Compared with LeNet5.
 Perfomed comparision between SGD, RMSprop and Adam Optimizers.
