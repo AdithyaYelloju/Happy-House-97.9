@@ -3,8 +3,13 @@ Happy House data set is images from the front door camera to check if the person
 The data set is labelled. Archieved 97.7% accuracy and Compared with LeNet5.
 Perfomed comparision between SGD, RMSprop and Adam Optimizers.
 
+## Train
+The complete training is explained in <a href="https://www.kaggle.com/adithyayelloju/97-9-accuracy-and-compared-with-lenet5">THIS</a> kaggle kernel.
+
+## Deployed
 You can use this https://smiledetect.herokuapp.com/
 
+## User Guide
 Homepage offers 2 way to give your image 1. Upload image and 2. Take image using your webcam
 You can see how to use it in : https://youtu.be/Zb6BFsJjr6o
 
