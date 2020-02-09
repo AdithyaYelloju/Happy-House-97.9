@@ -4,7 +4,8 @@ The data set is labelled. Archieved 97.7% accuracy and Compared with LeNet5.
 Perfomed comparision between SGD, RMSprop and Adam Optimizers.
 
 ## Train
-The complete training is explained in give pdf file.
+The complete training is explained in <a href="https://www.kaggle.com/amulyasriram/97-9-accuracy-and-compared-with-lenet5">THIS</a> kaggle kernel
+
 
 ## Deployed
 You can use this https://smiledetect.herokuapp.com/
