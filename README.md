@@ -11,7 +11,7 @@ You can use this https://smiledetect.herokuapp.com/
 
 ## User Guide
 Homepage offers 2 way to give your image 1. Upload image and 2. Take image using your webcam
-//You can see how to use it in : https://youtu.be/Zb6BFsJjr6o
+
 
 Visit the website and check yourself smilling or not...!
 
